@@ -2,8 +2,13 @@ import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
 import {ValidationPipe} from "@nestjs/common";
 import * as cookieParser from 'cookie-parser';
+import {NestExpressApplication} from "@nestjs/platform-express";
+
+console.log('hello world')
 
 async function bootstrap() {
+    
+
     const app = await NestFactory.create(AppModule);
 
     // app.useGlobalPipes(
@@ -21,7 +26,7 @@ async function bootstrap() {
     // );
 
 
-
+    // (app as NestExpressApplication).enable('trust proxy');
     app.use(cookieParser());
 
     await app.listen(3000);
