@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ShopController } from './shop/shop.controller';
 import { ShopService } from './shop/shop.service';
 import { BasketController } from './basket/basket.controller';
+import { BasketService } from './basket/basket.service';
 
 
 @Module({
@@ -12,7 +13,7 @@ import { BasketController } from './basket/basket.controller';
         // TypeOrmModule.forRoot(),
         ],
     controllers: [AppController, ShopController, BasketController],
-    providers: [AppService, ShopService],
+    providers: [AppService, ShopService, BasketService],
 })
 export class AppModule {
 }
